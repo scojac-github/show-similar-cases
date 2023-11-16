@@ -1,0 +1,27 @@
+<template>
+    <div class="container">
+        <div class="header">
+            <h2 class="title">🔎 Similar Cases</h2>
+            <p class="subtitle">We found some Cases with similar subjects to this one</p>
+        </div>
+        <div class="slds-p-around_medium">
+            <!-- Check if there are records to display -->
+            <template if:true={hasData}>
+                <lightning-datatable 
+                    key-field="Id" 
+                    data={records} 
+                    columns={columns} 
+                    class="slds-table slds-table_cell-buffer slds-table_bordered"
+                    hide-checkbox-column="true">
+                </lightning-datatable>
+            </template>
+            
+            <!-- Display empty state if no records -->
+            <template if:false={hasData}>
+                <div class="empty-state">
+                    <p>No similar cases found.</p>
+                </div>
+            </template>
+        </div>
+    </div>
+</template>

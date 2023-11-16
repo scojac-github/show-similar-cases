@@ -1,0 +1,41 @@
+/* Your existing styles */
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #ffffff; /* Background color for the container */
+    border: 1px solid #e3e3e3; /* Border color */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Box shadow for a subtle lift */
+}
+
+.header {
+    background-color: #001F5B; /* Header background color */
+    padding: 16px;
+    border-bottom: 1px solid #990000; /* Border color at the bottom of the header */
+    border-radius: 8px 8px 0 0; /* Rounded corners, except at the bottom */
+}
+
+.title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0;
+    color: #ffffff; /* Text color for the title */
+}
+
+.subtitle {
+    font-size: 0.8rem;
+    margin: 0;
+    color: #ffffff; /* Text color for the subtitle */
+}
+
+/* New styles for the empty state */
+.empty-state {
+    text-align: center;
+    color: #6b6b6b; /* Adjust color as needed */
+    padding: 20px;
+}
+
+.empty-state p {
+    margin: 0;
+}
