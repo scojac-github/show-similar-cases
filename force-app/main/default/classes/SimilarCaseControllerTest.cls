@@ -38,6 +38,7 @@ public class SimilarCaseControllerTest {
     // Test method to cover scenarios where the provided caseId is invalid
     @isTest
     static void testGetSimilarCasesInvalidCaseId() {
+        
         // Call the getSimilarCases method with an invalid caseId
         List<Case> resultCases = SimilarCaseController.getSimilarCases('invalidId');
 

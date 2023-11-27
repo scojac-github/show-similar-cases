@@ -8,8 +8,8 @@ public with sharing class SimilarCaseController {
         Case caseRecord = [SELECT Subject, Type FROM Case WHERE Id = :caseId];
 
 
-        // Define common words to exclude
-        Set<String> commonWords = new Set<String>{'and', 'the', 'for', 'it', 'is', 'in', 'of', 'with', 'on'/* Add more as needed */};
+        // Define common words to exclude. Add more as needed
+        Set<String> commonWords = new Set<String>{'and', 'the', 'for', 'it', 'is', 'in', 'of', 'with', 'on'};
 
         // Search all keywords by inserting 'OR' operator between each word, excluding common words
         List<String> filteredStringList = new List<String>();
@@ -19,11 +19,11 @@ public with sharing class SimilarCaseController {
             }
         }
 
+        // Build search term
         String stringSearch = String.join(filteredStringList, ' OR ') + '*';
-
         System.debug('Search for the following keywords: ' + stringSearch);
 
-        // Get similar Caess
+        // Get similar Cases
         List<List<SObject>> searchList = [
             FIND :stringSearch
             IN ALL FIELDS
