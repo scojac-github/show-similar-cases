@@ -7,7 +7,6 @@ public with sharing class SimilarCaseController {
         // Get subject from Case
         Case caseRecord = [SELECT Subject, Type FROM Case WHERE Id = :caseId];
 
-
         // Define common words to exclude. Add more as needed
         Set<String> commonWords = new Set<String>{'and', 'the', 'for', 'it', 'is', 'in', 'of', 'with', 'on'};
 
@@ -35,7 +34,7 @@ public with sharing class SimilarCaseController {
                     Type
                     WHERE Id != :caseId AND Type = :caseRecord.Type
                     ORDER BY CreatedDate DESC
-                    LIMIT 20)
+                    LIMIT 5)
         ];
 
         system.debug(searchList);
